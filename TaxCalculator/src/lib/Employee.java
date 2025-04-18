@@ -5,46 +5,41 @@ import java.time.Month;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Employee {
 
-	private String employeeId;
-	private String firstName;
-	private String lastName;
-	private String idNumber;
-	private String address;
 	
-	private int yearJoined;
-	private int monthJoined;
-	private int dayJoined;
-	private int monthWorkingInYear;
+	public class Employee {
+		private String employeeId;
+		private String firstName;
+		private String lastName;
+		private String idNumber;
+		private String address;
+		private int yearJoined;
+		private int monthJoined;
+		private int dayJoined;
+		private boolean isForeigner;
+		private boolean gender;
 	
-	private boolean isForeigner;
-	private boolean gender; //true = Laki-laki, false = Perempuan
+		private List<String> childNames;
+		private List<String> childIdNumbers;
 	
-	private int monthlySalary;
-	private int otherMonthlyIncome;
-	private int annualDeductible;
+		public Employee(PersonalInfo info, JoinDate joinDate) {
+			this.employeeId = info.getEmployeeId();
+			this.firstName = info.getFirstName();
+			this.lastName = info.getLastName();
+			this.idNumber = info.getIdNumber();
+			this.address = info.getAddress();
+			this.isForeigner = info.isForeigner();
+			this.gender = info.isGender();
 	
-	private String spouseName;
-	private String spouseIdNumber;
-
-	private List<String> childNames;
-	private List<String> childIdNumbers;
+			this.yearJoined = joinDate.getDate().getYear();
+			this.monthJoined = joinDate.getDate().getMonthValue();
+			this.dayJoined = joinDate.getDate().getDayOfMonth();
 	
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
-		this.employeeId = employeeId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.idNumber = idNumber;
-		this.address = address;
-		this.yearJoined = yearJoined;
-		this.monthJoined = monthJoined;
-		this.dayJoined = dayJoined;
-		this.isForeigner = isForeigner;
-		this.gender = gender;
-		
-		childNames = new LinkedList<String>();
-		childIdNumbers = new LinkedList<String>();
+			this.childNames = new LinkedList<>();
+			this.childIdNumbers = new LinkedList<>();
+		}
+	
+		// Tambahkan method lain sesuai kebutuhan...
 	}
 	
 	/**
