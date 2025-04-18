@@ -10,6 +10,8 @@ import java.util.List;
 
 
 public class Employee {
+	private String spouseName;
+	private String spouseIdNumber;
 	private int monthlySalary;
     private String employeeId;
     private String firstName;
@@ -79,8 +81,9 @@ public class Employee {
 	
 	public void setSpouse(String spouseName, String spouseIdNumber) {
 		this.spouseName = spouseName;
-		this.spouseIdNumber = idNumber;
+		this.spouseIdNumber = spouseIdNumber;
 	}
+	
 	
 	public void addChild(String childName, String childIdNumber) {
 		childNames.add(childName);
